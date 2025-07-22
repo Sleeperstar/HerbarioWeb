@@ -1,0 +1,92 @@
+[
+  {
+    "id_catalogo": "USM-12345",
+    "nombre_cientifico": "Solanum lycopersicum",
+    "familia": "Solanaceae",
+    "colector": "A. Weberbauer",
+    "fecha_colecta": "1902-05-15",
+    "localidad": "Ancash, Perú",
+    "url_imagen": "https://placehold.co/300x400.png"
+  },
+  {
+    "id_catalogo": "USM-23456",
+    "nombre_cientifico": "Lupinus mutabilis",
+    "familia": "Fabaceae",
+    "colector": "C. Vargas",
+    "fecha_colecta": "1955-08-20",
+    "localidad": "Cusco, Perú",
+    "url_imagen": "https://placehold.co/300x400.png"
+  },
+  {
+    "id_catalogo": "USM-34567",
+    "nombre_cientifico": "Baccharis latifolia",
+    "familia": "Asteraceae",
+    "colector": "R. Ferreyra",
+    "fecha_colecta": "1948-11-10",
+    "localidad": "Lima, Perú",
+    "url_imagen": "https://placehold.co/300x400.png"
+  },
+  {
+    "id_catalogo": "USM-45678",
+    "nombre_cientifico": "Polylepis racemosa",
+    "familia": "Rosaceae",
+    "colector": "E. Cerrate",
+    "fecha_colecta": "1963-06-25",
+    "localidad": "Junín, Perú",
+    "url_imagen": "https://placehold.co/300x400.png"
+  },
+  {
+    "id_catalogo": "USM-56789",
+    "nombre_cientifico": "Gentianella alborosea",
+    "familia": "Gentianaceae",
+    "colector": "A. Gentry",
+    "fecha_colecta": "1982-03-12",
+    "localidad": "Huanuco, Perú",
+    "url_imagen": "https://placehold.co/300x400.png"
+  },
+  {
+    "id_catalogo": "USM-67890",
+    "nombre_cientifico": "Puya raimondii",
+    "familia": "Bromeliaceae",
+    "colector": "A. Raimondi",
+    "fecha_colecta": "1867-09-01",
+    "localidad": "Ancash, Perú",
+    "url_imagen": "https://placehold.co/300x400.png"
+  },
+  {
+    "id_catalogo": "USM-78901",
+    "nombre_cientifico": "Cinchona officinalis",
+    "familia": "Rubiaceae",
+    "colector": "H. Ruiz",
+    "fecha_colecta": "1778-07-30",
+    "localidad": "Loja, Ecuador",
+    "url_imagen": "https://placehold.co/300x400.png"
+  },
+  {
+    "id_catalogo": "USM-89012",
+    "nombre_cientifico": "Escallonia resinosa",
+    "familia": "Escalloniaceae",
+    "colector": "A. Weberbauer",
+    "fecha_colecta": "1905-04-18",
+    "localidad": "Puno, Perú",
+    "url_imagen": "https://placehold.co/300x400.png"
+  },
+  {
+    "id_catalogo": "USM-90123",
+    "nombre_cientifico": "Werneria nubigena",
+    "familia": "Asteraceae",
+    "colector": "O. Tovar",
+    "fecha_colecta": "1971-02-22",
+    "localidad": "Ayacucho, Perú",
+    "url_imagen": "https://placehold.co/300x400.png"
+  },
+  {
+    "id_catalogo": "USM-01234",
+    "nombre_cientifico": "Valeriana plantaginea",
+    "familia": "Caprifoliaceae",
+    "colector": "C. Vargas",
+    "fecha_colecta": "1960-10-05",
+    "localidad": "Cusco, Perú",
+    "url_imagen": "https://placehold.co/300x400.png"
+  }
+]
