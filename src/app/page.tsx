@@ -2,10 +2,11 @@
 
 import { useState, useEffect, type ChangeEvent } from "react";
 import Image from "next/image";
-import { Leaf, Search, Info, FileText, FlaskConical } from "lucide-react";
+import { Leaf, Search, Info, FileText, FlaskConical, Sparkles, Database, Users } from "lucide-react";
 
 import Header from "@/components/Header";
 import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -29,34 +30,62 @@ interface Specimen {
 
 function SpecimenCard({ specimen }: { specimen: Specimen }) {
   return (
-    <Card className="flex flex-col overflow-hidden transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-xl">
-      <CardHeader className="p-0">
-        <div className="relative aspect-[3/4] w-full">
+    <Card className="group card-botanical hover-lift overflow-hidden border-0 shadow-md hover:shadow-2xl transition-all-smooth">
+      <CardHeader className="p-0 relative">
+        <div className="relative aspect-[3/4] w-full overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-t from-botanical-shadow/20 via-transparent to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           <Image
             src={specimen.url_imagen}
-            alt={`Imagen de ${specimen.nombre_cientifico}`}
+            alt={`Espécimen de ${specimen.nombre_cientifico}`}
             fill
-            className="object-cover"
+            className="object-cover transition-transform duration-700 group-hover:scale-110"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             data-ai-hint="plant specimen"
           />
+          <div className="absolute top-3 right-3 z-20">
+            <div className="bg-botanical-cream/90 backdrop-blur-sm rounded-full p-2 opacity-0 group-hover:opacity-100 transition-all-smooth transform translate-y-2 group-hover:translate-y-0">
+              <Sparkles className="w-4 h-4 text-botanical-amber" />
+            </div>
+          </div>
         </div>
       </CardHeader>
-      <CardContent className="p-4 flex-grow">
-        <CardTitle className="font-headline text-lg mb-1 italic">
+      <CardContent className="p-5 flex-grow bg-gradient-to-b from-card to-card/95">
+        <CardTitle className="font-scientific text-lg mb-2 italic text-botanical-shadow group-hover:text-botanical-leaf transition-colors">
           {specimen.nombre_cientifico}
         </CardTitle>
-        <CardDescription className="text-base">
-          <span className="font-semibold">Familia:</span> {specimen.familia}
-        </CardDescription>
-        <CardDescription>
-          <span className="font-semibold">Colector:</span> {specimen.colector}
-        </CardDescription>
+        <div className="space-y-2">
+          <CardDescription className="text-sm flex items-center gap-2">
+            <span className="inline-block w-2 h-2 bg-botanical-moss rounded-full"></span>
+            <span className="font-medium text-botanical-earth">Familia:</span> 
+            <span className="text-foreground/80">{specimen.familia}</span>
+          </CardDescription>
+          <CardDescription className="text-sm flex items-center gap-2">
+            <span className="inline-block w-2 h-2 bg-botanical-sage rounded-full"></span>
+            <span className="font-medium text-botanical-earth">Colector:</span> 
+            <span className="text-foreground/80">{specimen.colector}</span>
+          </CardDescription>
+          {specimen.fecha_colecta && (
+            <CardDescription className="text-sm flex items-center gap-2">
+              <span className="inline-block w-2 h-2 bg-botanical-amber rounded-full"></span>
+              <span className="font-medium text-botanical-earth">Fecha:</span> 
+              <span className="text-foreground/80">{specimen.fecha_colecta}</span>
+            </CardDescription>
+          )}
+        </div>
       </CardContent>
-      <CardFooter className="p-4 pt-0 mt-auto">
-        <p className="text-xs text-muted-foreground font-mono bg-muted px-2 py-1 rounded">
-          {specimen.id_catalogo}
-        </p>
+      <CardFooter className="p-5 pt-0 mt-auto">
+        <div className="flex items-center justify-between w-full">
+          <p className="text-xs text-muted-foreground font-mono bg-botanical-sage/10 px-3 py-1.5 rounded-full border border-botanical-sage/20">
+            {specimen.id_catalogo}
+          </p>
+          <Button 
+            variant="ghost" 
+            size="sm" 
+            className="opacity-0 group-hover:opacity-100 transition-all-smooth transform translate-x-2 group-hover:translate-x-0 text-botanical-leaf hover:text-botanical-shadow hover:bg-botanical-leaf/10"
+          >
+            Ver detalles
+          </Button>
+        </div>
       </CardFooter>
     </Card>
   );
@@ -108,86 +137,154 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-leaf-pattern">
       <Header />
-      <main className="container mx-auto px-4 py-8 md:py-12">
-        <header className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-extrabold text-green-800 mb-4">
-            El herbario más grande del Perú, ahora abierto al mundo
-          </h1>
-          <p className="max-w-4xl mx-auto text-lg text-gray-600">
-            El Herbario USM, con sus más de 750,000 especímenes, se embarca en
-            un proyecto de digitalización para hacer accesible su invaluable
-            colección a investigadores, educadores y al público en general.
-            Nuestro enfoque inicial es la digitalización de 1,500 especímenes
-            Tipo y 8,000 colecciones históricas.
-          </p>
-        </header>
+      <main className="pt-20 lg:pt-24">
+        {/* Hero Section */}
+        <section className="relative overflow-hidden bg-botanical-gradient">
+          <div className="absolute inset-0 bg-gradient-to-br from-botanical-cream/50 via-transparent to-botanical-sage/20"></div>
+          <div className="relative container mx-auto px-4 py-16 lg:py-24">
+            <div className="text-center max-w-5xl mx-auto">
+              <div className="flex justify-center mb-8">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-botanical-leaf/20 rounded-full blur-xl animate-pulse"></div>
+                  <Leaf className="w-16 h-16 lg:w-20 lg:h-20 text-botanical-leaf relative z-10" />
+                </div>
+              </div>
+              <h1 className="font-headline text-4xl md:text-6xl lg:text-7xl font-bold text-botanical-shadow mb-6 text-shadow leading-tight">
+                El herbario más grande del Perú,{" "}
+                <span className="text-botanical-leaf">ahora abierto al mundo</span>
+              </h1>
+              <p className="text-lg lg:text-xl text-botanical-earth/80 mb-8 max-w-4xl mx-auto leading-relaxed">
+                El Herbario USM, con sus más de{" "}
+                <span className="font-semibold text-botanical-leaf">750,000 especímenes</span>, se embarca en
+                un proyecto de digitalización para hacer accesible su invaluable
+                colección a investigadores, educadores y al público en general.
+              </p>
+              <div className="flex flex-wrap justify-center gap-4 mb-12">
+                <div className="flex items-center gap-2 bg-botanical-cream/80 backdrop-blur-sm px-4 py-2 rounded-full border border-botanical-sage/30">
+                  <Database className="w-5 h-5 text-botanical-leaf" />
+                  <span className="text-sm font-medium text-botanical-shadow">1,500 especímenes Tipo</span>
+                </div>
+                <div className="flex items-center gap-2 bg-botanical-cream/80 backdrop-blur-sm px-4 py-2 rounded-full border border-botanical-sage/30">
+                  <Users className="w-5 h-5 text-botanical-leaf" />
+                  <span className="text-sm font-medium text-botanical-shadow">8,000 colecciones históricas</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-background to-transparent"></div>
+        </section>
 
-        <section className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 text-center">
-          <div className="flex flex-col items-center">
-            <Search className="w-12 h-12 text-green-700 mb-2" />
-            <h3 className="text-xl font-bold text-gray-800">
-              Explora la Colección
-            </h3>
-            <p className="text-gray-600">
-              Accede directamente a la base de datos con nuestra búsqueda
-              avanzada.
-            </p>
-          </div>
-          <div className="flex flex-col items-center">
-            <FileText className="w-12 h-12 text-green-700 mb-2" />
-            <h3 className="text-xl font-bold text-gray-800">
-              Colecciones Históricas
-            </h3>
-            <p className="text-gray-600">
-              Descubre el legado de colectores como Antonio Raimondi y Augusto
-              Weberbauer.
-            </p>
-          </div>
-          <div className="flex flex-col items-center">
-            <FlaskConical className="w-12 h-12 text-green-700 mb-2" />
-            <h3 className="text-xl font-bold text-gray-800">
-              Códigos de Barras de ADN
-            </h3>
-            <p className="text-gray-600">
-              Explora nuestro innovador trabajo en la identificación molecular
-              de especies.
-            </p>
+        {/* Features Section */}
+        <section className="container mx-auto px-4 py-16">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="font-headline text-3xl lg:text-4xl font-bold text-botanical-shadow mb-4">
+                Descubre la Biodiversidad Peruana
+              </h2>
+              <p className="text-botanical-earth/70 max-w-2xl mx-auto">
+                Explora siglos de investigación botánica a través de nuestra plataforma digital
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="group card-botanical hover-lift p-8 text-center">
+                <div className="relative mb-6">
+                  <div className="absolute inset-0 bg-botanical-leaf/10 rounded-full blur-lg group-hover:blur-xl transition-all-smooth"></div>
+                  <Search className="w-14 h-14 text-botanical-leaf mx-auto relative z-10 group-hover:scale-110 transition-transform" />
+                </div>
+                <h3 className="font-headline text-xl font-bold text-botanical-shadow mb-3 group-hover:text-botanical-leaf transition-colors">
+                  Explora la Colección
+                </h3>
+                <p className="text-botanical-earth/70 leading-relaxed">
+                  Accede directamente a la base de datos con nuestra búsqueda
+                  avanzada y filtros especializados.
+                </p>
+              </div>
+              <div className="group card-botanical hover-lift p-8 text-center">
+                <div className="relative mb-6">
+                  <div className="absolute inset-0 bg-botanical-amber/10 rounded-full blur-lg group-hover:blur-xl transition-all-smooth"></div>
+                  <FileText className="w-14 h-14 text-botanical-amber mx-auto relative z-10 group-hover:scale-110 transition-transform" />
+                </div>
+                <h3 className="font-headline text-xl font-bold text-botanical-shadow mb-3 group-hover:text-botanical-amber transition-colors">
+                  Colecciones Históricas
+                </h3>
+                <p className="text-botanical-earth/70 leading-relaxed">
+                  Descubre el legado de colectores como Antonio Raimondi y Augusto
+                  Weberbauer.
+                </p>
+              </div>
+              <div className="group card-botanical hover-lift p-8 text-center">
+                <div className="relative mb-6">
+                  <div className="absolute inset-0 bg-botanical-moss/10 rounded-full blur-lg group-hover:blur-xl transition-all-smooth"></div>
+                  <FlaskConical className="w-14 h-14 text-botanical-moss mx-auto relative z-10 group-hover:scale-110 transition-transform" />
+                </div>
+                <h3 className="font-headline text-xl font-bold text-botanical-shadow mb-3 group-hover:text-botanical-moss transition-colors">
+                  Códigos de Barras de ADN
+                </h3>
+                <p className="text-botanical-earth/70 leading-relaxed">
+                  Explora nuestro innovador trabajo en la identificación molecular
+                  de especies.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
         
-        <div className="max-w-2xl mx-auto mb-12">
-          <div className="relative">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
-            <Input
-              type="search"
-              placeholder="Buscar por nombre científico, familia o colector..."
-              className="w-full pl-12 pr-4 py-6 text-base rounded-full shadow-lg border-2 border-gray-200 focus:border-green-500 focus:ring-green-500"
-              value={searchTerm}
-              onChange={handleSearch}
-              aria-label="Search specimens"
-            />
+        {/* Search Section */}
+        <section className="container mx-auto px-4 py-12">
+          <div className="max-w-3xl mx-auto text-center mb-8">
+            <h2 className="font-headline text-2xl lg:text-3xl font-bold text-botanical-shadow mb-4">
+              Busca en Nuestra Colección
+            </h2>
+            <p className="text-botanical-earth/70 mb-8">
+              Explora más de 750,000 especímenes digitalizados con nuestra búsqueda inteligente
+            </p>
           </div>
-        </div>
+          <div className="max-w-2xl mx-auto mb-12">
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-r from-botanical-leaf/20 to-botanical-amber/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="relative bg-card/80 backdrop-blur-sm rounded-2xl border border-botanical-sage/30 shadow-lg hover:shadow-xl transition-all-smooth">
+                <Search className="absolute left-6 top-1/2 -translate-y-1/2 h-5 w-5 text-botanical-leaf/60" />
+                <Input
+                  type="search"
+                  placeholder="Buscar por nombre científico, familia o colector..."
+                  className="w-full pl-14 pr-6 py-6 text-base bg-transparent border-0 rounded-2xl focus:ring-2 focus:ring-botanical-leaf/30 placeholder:text-botanical-earth/50"
+                  value={searchTerm}
+                  onChange={handleSearch}
+                  aria-label="Search specimens"
+                />
+              </div>
+            </div>
+            {searchTerm && (
+              <div className="mt-4 text-center">
+                <p className="text-sm text-botanical-earth/70">
+                  Mostrando resultados para: <span className="font-medium text-botanical-leaf">"{searchTerm}"</span>
+                </p>
+              </div>
+            )}
+          </div>
+        </section>
 
-        {loading && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {Array.from({ length: 8 }).map((_, i) => (
-              <Card key={i} className="flex flex-col">
-                <Skeleton className="h-64 w-full" />
-                <CardContent className="p-4 space-y-2">
-                  <Skeleton className="h-6 w-3/4" />
-                  <Skeleton className="h-4 w-1/2" />
-                  <Skeleton className="h-4 w-1/3" />
-                </CardContent>
-                <CardFooter className="p-4 pt-0">
-                  <Skeleton className="h-6 w-1/4" />
-                </CardFooter>
-              </Card>
-            ))}
-          </div>
-        )}
+        {/* Results Section */}
+        <section className="container mx-auto px-4 pb-16">
+          {loading && (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {Array.from({ length: 8 }).map((_, i) => (
+                <Card key={i} className="card-botanical">
+                  <Skeleton className="h-64 w-full rounded-t-xl" />
+                  <CardContent className="p-5 space-y-3">
+                    <Skeleton className="h-6 w-3/4" />
+                    <Skeleton className="h-4 w-1/2" />
+                    <Skeleton className="h-4 w-1/3" />
+                  </CardContent>
+                  <CardFooter className="p-5 pt-0">
+                    <Skeleton className="h-6 w-1/4 rounded-full" />
+                  </CardFooter>
+                </Card>
+              ))}
+            </div>
+          )}
 
         {error && (
           <Alert variant="destructive" className="max-w-2xl mx-auto">
@@ -197,36 +294,98 @@ export default function Home() {
           </Alert>
         )}
 
-        {!loading && !error && filteredSpecimens.length > 0 && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {filteredSpecimens.map((specimen) => (
-              <SpecimenCard key={specimen.id_catalogo} specimen={specimen} />
-            ))}
-          </div>
-        )}
+          {!loading && !error && filteredSpecimens.length > 0 && (
+            <>
+              <div className="text-center mb-8">
+                <p className="text-botanical-earth/70">
+                  Encontrados <span className="font-semibold text-botanical-leaf">{filteredSpecimens.length}</span> especímenes
+                </p>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                {filteredSpecimens.map((specimen) => (
+                  <SpecimenCard key={specimen.id_catalogo} specimen={specimen} />
+                ))}
+              </div>
+            </>
+          )}
 
-        {!loading && !error && filteredSpecimens.length === 0 && (
-          <div className="text-center py-16">
-            <p className="text-xl text-gray-500">
-              No se encontraron resultados para "{searchTerm}".
-            </p>
-            <p className="text-gray-400 mt-2">
-              Intenta con otro término de búsqueda.
-            </p>
-          </div>
-        )}
+          {!loading && !error && filteredSpecimens.length === 0 && (
+            <div className="text-center py-16">
+              <div className="max-w-md mx-auto">
+                <div className="mb-6">
+                  <Search className="w-16 h-16 text-botanical-sage/50 mx-auto mb-4" />
+                </div>
+                <p className="text-xl text-botanical-earth/80 mb-2">
+                  No se encontraron resultados para "{searchTerm}".
+                </p>
+                <p className="text-botanical-earth/60">
+                  Intenta con otro término de búsqueda o explora nuestra colección completa.
+                </p>
+              </div>
+            </div>
+          )}
+        </section>
         
-        <section className="text-center mt-16 py-8 bg-white rounded-lg shadow-md">
-            <h2 className="text-3xl font-bold text-gray-800 mb-2">Noticias y Avances</h2>
-            <p className="text-gray-600">Próximamente: ¡Las últimas noticias y descubrimientos del proyecto!</p>
+        {/* News Section */}
+        <section className="container mx-auto px-4 py-16">
+          <div className="max-w-4xl mx-auto">
+            <div className="card-botanical p-12 text-center">
+              <div className="mb-6">
+                <Sparkles className="w-12 h-12 text-botanical-amber mx-auto mb-4" />
+              </div>
+              <h2 className="font-headline text-3xl font-bold text-botanical-shadow mb-4">
+                Noticias y Avances
+              </h2>
+              <p className="text-botanical-earth/70 text-lg">
+                Próximamente: ¡Las últimas noticias y descubrimientos del proyecto de digitalización!
+              </p>
+              <div className="mt-8">
+                <Button className="bg-botanical-leaf hover:bg-botanical-shadow text-white px-8 py-3 rounded-full font-medium transition-all-smooth hover:scale-105">
+                  Mantente Informado
+                </Button>
+              </div>
+            </div>
+          </div>
         </section>
 
       </main>
-      <footer className="text-center py-6 mt-12 border-t">
-        <p className="text-sm text-gray-500">
-          &copy; {new Date().getFullYear()} Herbario Digital USM Explorer. Todos
-          los derechos reservados.
-        </p>
+      
+      {/* Footer */}
+      <footer className="bg-botanical-shadow text-botanical-cream">
+        <div className="container mx-auto px-4 py-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <div>
+              <div className="flex items-center space-x-3 mb-4">
+                <Leaf className="w-8 h-8 text-botanical-amber" />
+                <h3 className="font-headline text-xl font-bold">Herbario USM</h3>
+              </div>
+              <p className="text-botanical-cream/70 leading-relaxed">
+                Preservando y compartiendo la biodiversidad peruana para las futuras generaciones.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-lg mb-4">Enlaces Rápidos</h4>
+              <ul className="space-y-2 text-botanical-cream/70">
+                <li><a href="/" className="hover:text-botanical-amber transition-colors">Explorar Colección</a></li>
+                <li><a href="/about" className="hover:text-botanical-amber transition-colors">Acerca del Proyecto</a></li>
+                <li><a href="/collections" className="hover:text-botanical-amber transition-colors">Colecciones Históricas</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-lg mb-4">Contacto</h4>
+              <p className="text-botanical-cream/70 leading-relaxed">
+                Universidad Nacional Mayor de San Marcos<br />
+                Museo de Historia Natural<br />
+                Lima, Perú
+              </p>
+            </div>
+          </div>
+          <div className="border-t border-botanical-cream/20 pt-8 text-center">
+            <p className="text-botanical-cream/60">
+              &copy; {new Date().getFullYear()} Herbario Digital USM Explorer. Todos los derechos reservados.
+            </p>
+          </div>
+        </div>
       </footer>
     </div>
   );

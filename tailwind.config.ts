@@ -10,9 +10,10 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        body: ['Inter', 'sans-serif'],
-        headline: ['Literata', 'serif'],
-        code: ['monospace'],
+        body: ['Inter', 'system-ui', 'sans-serif'],
+        headline: ['Playfair Display', 'Georgia', 'serif'],
+        scientific: ['Literata', 'Times New Roman', 'serif'],
+        mono: ['JetBrains Mono', 'Consolas', 'monospace'],
       },
       colors: {
         background: 'hsl(var(--background))',
@@ -64,6 +65,16 @@ export default {
           'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
           border: 'hsl(var(--sidebar-border))',
           ring: 'hsl(var(--sidebar-ring))',
+        },
+        // Botanical color palette
+        botanical: {
+          leaf: 'hsl(var(--leaf-green))',
+          moss: 'hsl(var(--moss-green))',
+          sage: 'hsl(var(--sage-green))',
+          earth: 'hsl(var(--earth-brown))',
+          amber: 'hsl(var(--golden-amber))',
+          cream: 'hsl(var(--cream-white))',
+          shadow: 'hsl(var(--forest-shadow))',
         },
       },
       borderRadius: {
