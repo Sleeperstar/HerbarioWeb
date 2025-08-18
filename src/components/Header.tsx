@@ -21,10 +21,8 @@ export default function Header() {
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all-smooth ${
-        isScrolled 
-          ? "bg-card/95 backdrop-blur-md shadow-lg border-b border-border/50" 
-          : "bg-transparent"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all-smooth bg-[#751a1d] text-white ${
+        isScrolled ? "shadow-lg" : ""
       }`}
     >
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -39,10 +37,10 @@ export default function Header() {
               <Leaf className="w-8 h-8 lg:w-10 lg:h-10 text-botanical-leaf relative z-10 group-hover:rotate-12 transition-all-smooth" />
             </div>
             <div className="hidden sm:block">
-              <h1 className="font-headline text-xl lg:text-2xl font-bold text-foreground group-hover:text-botanical-leaf transition-colors">
+              <h1 className="font-headline text-xl lg:text-2xl font-bold text-white transition-colors">
                 Herbario USM
               </h1>
-              <p className="text-xs lg:text-sm text-muted-foreground font-medium">
+              <p className="text-xs lg:text-sm text-white/80 font-medium">
                 Explorer Digital
               </p>
             </div>
@@ -65,21 +63,21 @@ export default function Header() {
           <Button
             variant="ghost"
             size="sm"
-            className="md:hidden p-2 hover:bg-botanical-sage/20"
+            className="md:hidden p-2 text-white hover:bg-white/10"
             onClick={toggleMenu}
             aria-label="Toggle menu"
           >
             {isMenuOpen ? (
-              <X className="w-5 h-5 text-foreground" />
+              <X className="w-5 h-5 text-white" />
             ) : (
-              <Menu className="w-5 h-5 text-foreground" />
+              <Menu className="w-5 h-5 text-white" />
             )}
           </Button>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-card/98 backdrop-blur-md border-b border-border/50 shadow-lg">
+          <div className="md:hidden absolute top-full left-0 right-0 bg-[#751a1d]/95 border-b border-white/10 shadow-lg">
             <div className="px-4 py-4 space-y-2">
               <MobileNavLink href="/" icon={<Search className="w-4 h-4" />} onClick={() => setIsMenuOpen(false)}>
                 Explorar Colección
@@ -110,7 +108,7 @@ function NavLink({
   return (
     <Link
       href={href}
-      className="group flex items-center space-x-2 px-3 lg:px-4 py-2 rounded-lg text-sm lg:text-base font-medium text-foreground/80 hover:text-botanical-leaf hover:bg-botanical-sage/10 transition-all-smooth relative overflow-hidden"
+      className="group flex items-center space-x-2 px-3 lg:px-4 py-2 rounded-lg text-sm lg:text-base font-medium text-white/90 hover:text-white hover:bg-white/10 transition-all-smooth relative overflow-hidden"
     >
       <div className="absolute inset-0 bg-gradient-to-r from-botanical-leaf/5 to-botanical-amber/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
       {icon && <span className="relative z-10">{icon}</span>}
@@ -134,10 +132,10 @@ function MobileNavLink({
     <Link
       href={href}
       onClick={onClick}
-      className="flex items-center space-x-3 px-4 py-3 rounded-lg text-foreground/80 hover:text-botanical-leaf hover:bg-botanical-sage/10 transition-all-smooth group"
+      className="flex items-center space-x-3 px-4 py-3 rounded-lg text-white/90 hover:text-white hover:bg-white/10 transition-all-smooth group"
     >
       {icon && (
-        <span className="text-botanical-leaf/70 group-hover:text-botanical-leaf transition-colors">
+        <span className="text-white/80 group-hover:text-white transition-colors">
           {icon}
         </span>
       )}
