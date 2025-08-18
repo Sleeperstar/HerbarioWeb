@@ -34,7 +34,7 @@ export default function Header() {
           >
             <div className="relative">
               <div className="absolute inset-0 bg-botanical-leaf/20 rounded-full blur-sm group-hover:blur-none transition-all-smooth"></div>
-              <Leaf className="w-8 h-8 lg:w-10 lg:h-10 text-botanical-leaf relative z-10 group-hover:rotate-12 transition-all-smooth" />
+              <Leaf className="w-8 h-8 lg:w-10 lg:h-10 text-[#ec973a] relative z-10 group-hover:rotate-12 transition-all-smooth" />
             </div>
             <div className="hidden sm:block">
               <h1 className="font-headline text-xl lg:text-2xl font-bold text-white transition-colors">
@@ -48,13 +48,13 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1 lg:space-x-2">
-            <NavLink href="/" icon={<Search className="w-4 h-4" />}>
+            <NavLink href="/" icon={<Search className="w-4 h-4 text-[#ec973a]" />}>
               Explorar
             </NavLink>
-            <NavLink href="/about" icon={<Info className="w-4 h-4" />}>
+            <NavLink href="/about" icon={<Info className="w-4 h-4 text-[#ec973a]" />}>
               Acerca del Proyecto
             </NavLink>
-            <NavLink href="/collections" icon={<BookOpen className="w-4 h-4" />}>
+            <NavLink href="/collections" icon={<BookOpen className="w-4 h-4 text-[#ec973a]" />}>
               Colecciones
             </NavLink>
           </div>
@@ -68,9 +68,9 @@ export default function Header() {
             aria-label="Toggle menu"
           >
             {isMenuOpen ? (
-              <X className="w-5 h-5 text-white" />
+              <X className="w-5 h-5 text-[#ec973a]" />
             ) : (
-              <Menu className="w-5 h-5 text-white" />
+              <Menu className="w-5 h-5 text-[#ec973a]" />
             )}
           </Button>
         </div>
@@ -79,13 +79,13 @@ export default function Header() {
         {isMenuOpen && (
           <div className="md:hidden absolute top-full left-0 right-0 bg-[#751a1d]/95 border-b border-white/10 shadow-lg">
             <div className="px-4 py-4 space-y-2">
-              <MobileNavLink href="/" icon={<Search className="w-4 h-4" />} onClick={() => setIsMenuOpen(false)}>
+              <MobileNavLink href="/" icon={<Search className="w-4 h-4 text-[#ec973a]" />} onClick={() => setIsMenuOpen(false)}>
                 Explorar Colección
               </MobileNavLink>
-              <MobileNavLink href="/about" icon={<Info className="w-4 h-4" />} onClick={() => setIsMenuOpen(false)}>
+              <MobileNavLink href="/about" icon={<Info className="w-4 h-4 text-[#ec973a]" />} onClick={() => setIsMenuOpen(false)}>
                 Acerca del Proyecto
               </MobileNavLink>
-              <MobileNavLink href="/collections" icon={<BookOpen className="w-4 h-4" />} onClick={() => setIsMenuOpen(false)}>
+              <MobileNavLink href="/collections" icon={<BookOpen className="w-4 h-4 text-[#ec973a]" />} onClick={() => setIsMenuOpen(false)}>
                 Colecciones Históricas
               </MobileNavLink>
             </div>
