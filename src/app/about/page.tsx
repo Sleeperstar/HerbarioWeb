@@ -1,10 +1,11 @@
 import Header from "@/components/Header";
+import TeamMemberCard, { TeamMember } from "@/components/TeamMemberCard";
 
 export default function About() {
   return (
     <div>
       <Header />
-      <main className="container mx-auto px-6 py-8">
+      <main className="container mx-auto px-6 pt-28 pb-12">
         <h1 className="text-4xl font-bold text-green-800 mb-8">
           Acerca del Proyecto
         </h1>
@@ -78,14 +79,8 @@ export default function About() {
           <h2 className="text-3xl font-semibold text-gray-800 mb-4">
             Nuestro Equipo
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Aquí se puede mapear una lista de miembros del equipo */}
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-bold mb-2">Nombre del Miembro</h3>
-              <p className="text-gray-600">Rol, Facultad</p>
-            </div>
-            {/* ... otros miembros */}
-          </div>
+          {/* Plantilla con datos de ejemplo. Reemplace con datos reales cuando estén disponibles. */}
+          <TeamGrid />
         </section>
 
         <section>
@@ -99,6 +94,36 @@ export default function About() {
           </p>
         </section>
       </main>
+    </div>
+  );
+}
+
+function TeamGrid() {
+  const team: TeamMember[] = [
+    {
+      name: "Integrante 1",
+      role: "Coordinador del Proyecto",
+      imageUrl: "https://placehold.co/224x224/png?text=I1",
+    },
+    {
+      name: "Integrante 2",
+      role: "Desarrollador Frontend",
+      imageUrl: "https://placehold.co/224x224/png?text=I2",
+    },
+    {
+      name: "Integrante 3",
+      role: "Especialista en Datos",
+      imageUrl: "https://placehold.co/224x224/png?text=I3",
+    },
+  ];
+
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {team.map((member) => (
+        <div key={member.name}>
+          <TeamMemberCard member={member} />
+        </div>
+      ))}
     </div>
   );
 }
