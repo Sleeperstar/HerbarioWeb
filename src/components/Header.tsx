@@ -33,14 +33,14 @@ export default function Header() {
             href="/" 
             className="flex items-center space-x-3 group transition-all-smooth hover:scale-105"
           >
-            <div className="relative">
+            <div className="relative w-12 h-12 lg:w-16 lg:h-16">
               <div className="absolute inset-0 bg-botanical-leaf/20 rounded-full blur-sm group-hover:blur-none transition-all-smooth"></div>
               <Image
                 src="/images/UNMSM_logo1.png"
                 alt="Herbario USM Logo"
-                width={100}
-                height={100}
-                className="relative z-10 transition-all-smooth w-8 h-8 lg:w-10 lg:h-10 object-contain"
+                width={64}
+                height={64}
+                className="relative z-10 transition-all-smooth w-full h-full object-contain"
                 priority
               />
             </div>
