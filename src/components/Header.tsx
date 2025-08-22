@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { Leaf, Menu, X, Search, BookOpen, Info } from "lucide-react";
+import { Menu, X, Search, BookOpen, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,7 +35,14 @@ export default function Header() {
           >
             <div className="relative">
               <div className="absolute inset-0 bg-botanical-leaf/20 rounded-full blur-sm group-hover:blur-none transition-all-smooth"></div>
-              <Leaf className="w-8 h-8 lg:w-10 lg:h-10 text-[#ec973a] relative z-10 group-hover:rotate-12 transition-all-smooth" />
+              <Image
+                src="/images/UNMSM_logo1.png"
+                alt="Herbario USM Logo"
+                width={40}
+                height={40}
+                className="relative z-10 transition-all-smooth w-8 h-8 lg:w-10 lg:h-10 object-contain"
+                priority
+              />
             </div>
             <div className="hidden sm:block">
               <h1 className="font-headline text-xl lg:text-2xl font-bold text-white transition-colors">
