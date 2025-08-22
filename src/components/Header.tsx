@@ -38,8 +38,8 @@ export default function Header() {
               <Image
                 src="/images/UNMSM_logo1.png"
                 alt="Herbario USM Logo"
-                width={40}
-                height={40}
+                width={100}
+                height={100}
                 className="relative z-10 transition-all-smooth w-8 h-8 lg:w-10 lg:h-10 object-contain"
                 priority
               />
