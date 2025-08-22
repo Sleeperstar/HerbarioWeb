@@ -34,7 +34,7 @@ export default function Footer() {
         </div>
         <div className="border-t border-white/20 pt-8 text-center">
           <p className="text-white/70">
-            &copy; {new Date().getFullYear()} Herbario Digital USM Explorer. Todos los derechos reservados.
+            &copy; {new Date().getFullYear()} Herbario Digital USM Explorer. Todos los derechos reservados
           </p>
         </div>
       </div>
