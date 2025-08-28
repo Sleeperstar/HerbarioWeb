@@ -144,9 +144,9 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-leaf-pattern">
       <Header />
-      <main className="pt-20 lg:pt-24">
+      <main className="pt-0">
         {/* Hero Section */}
-        <section className="relative overflow-hidden bg-botanical-gradient">
+        <section className="relative overflow-hidden bg-botanical-gradient pt-20 lg:pt-24">
           {/* Background Image */}
           <div className="absolute inset-0">
             <Image
