@@ -160,7 +160,7 @@ export default function Home() {
           </div>
           {/* Overlay for readability */}
           <div className="absolute inset-0 bg-gradient-to-br from-botanical-cream/50 via-transparent to-botanical-sage/20"></div>
-          <div className="relative container mx-auto px-4 pt-28 pb-16 lg:pt-40 lg:pb-24">
+          <div className="relative container mx-auto px-4 pt-36 pb-16 lg:pt-56 lg:pb-24">
             <div className="text-center max-w-5xl mx-auto">
               <div className="flex justify-center mb-8">
                 <div className="relative">
@@ -168,17 +168,29 @@ export default function Home() {
                   <Leaf className="w-16 h-16 lg:w-20 lg:h-20 text-botanical-leaf relative z-10" />
                 </div>
               </div>
-              <h1 className="font-headline text-4xl md:text-6xl lg:text-7xl font-bold text-botanical-shadow mb-6 text-shadow leading-tight">
-                El herbario más grande del Perú,{" "}
-                <span className="text-botanical-leaf">ahora abierto al mundo</span>
-              </h1>
-              <p className="text-lg lg:text-xl text-botanical-earth/80 mb-8 max-w-4xl mx-auto leading-relaxed">
-                El Herbario USM, con sus más de{" "}
-                <span className="font-semibold text-botanical-leaf">750,000 especímenes</span>, se embarca en
-                un proyecto de digitalización para hacer accesible su invaluable
-                colección a investigadores, educadores y al público en general.
-              </p>
-              <div className="flex flex-wrap justify-center gap-4 mb-12">
+              <div className="mx-auto max-w-4xl bg-black/35 backdrop-blur-sm rounded-2xl border border-white/10 shadow-lg p-6 md:p-8">
+                <h1 className="font-headline text-4xl md:text-6xl lg:text-7xl font-bold text-botanical-shadow mb-6 text-shadow leading-tight text-white">
+                  El herbario más grande del Perú,{" "}
+                  <span className="text-botanical-leaf">ahora abierto al mundo</span>
+                </h1>
+                <p className="text-lg lg:text-xl text-white/90 mb-8 mx-auto leading-relaxed">
+                  El Herbario USM, con sus más de{" "}
+                  <span className="font-semibold text-botanical-leaf">750,000 especímenes</span>, se embarca en
+                  un proyecto de digitalización para hacer accesible su invaluable
+                  colección a investigadores, educadores y al público en general.
+                </p>
+                <div className="flex flex-wrap justify-center gap-4 mb-4">
+                  <div className="flex items-center gap-2 bg-botanical-cream/80 backdrop-blur-sm px-4 py-2 rounded-full border border-botanical-sage/30">
+                    <Database className="w-5 h-5 text-botanical-leaf" />
+                    <span className="text-sm font-medium text-botanical-shadow">1,500 especímenes Tipo</span>
+                  </div>
+                  <div className="flex items-center gap-2 bg-botanical-cream/80 backdrop-blur-sm px-4 py-2 rounded-full border border-botanical-sage/30">
+                    <Users className="w-5 h-5 text-botanical-leaf" />
+                    <span className="text-sm font-medium text-botanical-shadow">8,000 colecciones históricas</span>
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-wrap justify-center gap-4 mb-12 hidden">
                 <div className="flex items-center gap-2 bg-botanical-cream/80 backdrop-blur-sm px-4 py-2 rounded-full border border-botanical-sage/30">
                   <Database className="w-5 h-5 text-botanical-leaf" />
                   <span className="text-sm font-medium text-botanical-shadow">1,500 especímenes Tipo</span>
