@@ -162,12 +162,6 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-br from-botanical-cream/50 via-transparent to-botanical-sage/20"></div>
           <div className="relative container mx-auto px-4 min-h-[65vh] flex items-center justify-center py-16 lg:py-20">
             <div className="text-center max-w-5xl mx-auto">
-              <div className="flex justify-center mb-8">
-                <div className="relative">
-                  <div className="absolute inset-0 bg-botanical-leaf/20 rounded-full blur-xl animate-pulse"></div>
-                  <Leaf className="w-16 h-16 lg:w-20 lg:h-20 text-botanical-leaf relative z-10" />
-                </div>
-              </div>
               <div className="mx-auto max-w-4xl bg-black/35 backdrop-blur-sm md:backdrop-blur-md rounded-2xl border border-white/10 shadow-lg p-6 md:p-8 md:-translate-y-2 lg:-translate-y-3">
                 <h1 className="font-headline text-4xl md:text-6xl lg:text-7xl font-bold text-botanical-shadow mb-6 text-shadow leading-tight text-white">
                   El herbario más grande del Perú,{" "}
