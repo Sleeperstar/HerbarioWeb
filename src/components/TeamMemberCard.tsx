@@ -3,6 +3,7 @@ import Image from "next/image";
 export type TeamMember = {
   name: string;
   role: string;
+  faculty: string;
   imageUrl: string;
 };
 
@@ -22,6 +23,7 @@ export default function TeamMemberCard({ member }: { member: TeamMember }) {
         <div>
           <h3 className="text-lg font-semibold text-foreground">{member.name}</h3>
           <p className="text-sm text-muted-foreground">{member.role}</p>
+          <p className="text-xs text-muted-foreground/80">{member.faculty}</p>
         </div>
       </div>
     </div>

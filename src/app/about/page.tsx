@@ -101,19 +101,40 @@ export default function About() {
 function TeamGrid() {
   const team: TeamMember[] = [
     {
-      name: "Integrante 1",
-      role: "Coordinador del Proyecto",
-      imageUrl: "https://placehold.co/224x224/png?text=I1",
+      name: "Orjeda Fernandez Maria Gisella",
+      role: "Investigadora principal",
+      faculty: "Facultad: Ciencias Biológicas",
+      imageUrl: "/images/integrantes/Gisella Orjeda.jpeg",
     },
     {
-      name: "Integrante 2",
-      role: "Desarrollador Frontend",
-      imageUrl: "https://placehold.co/224x224/png?text=I2",
+      name: "Arakaki Makishi Monica",
+      role: "Investigadora principal",
+      faculty: "Facultad: Ciencias Biológicas",
+      imageUrl: "/images/integrantes/ARAKAKI MAKISHI.jpeg",
     },
     {
-      name: "Integrante 3",
-      role: "Especialista en Datos",
-      imageUrl: "https://placehold.co/224x224/png?text=I3",
+      name: "Alban Castillo Joaquina Adelaida",
+      role: "Investigadora principal",
+      faculty: "Facultad: Ciencias Biológicas",
+      imageUrl: "/images/integrantes/ALBAN CASTILLO.jpeg",
+    },
+    {
+      name: "Millan Salazar Betty Gaby",
+      role: "Investigadora principal",
+      faculty: "Facultad: Ciencias Biológicas",
+      imageUrl: "/images/integrantes/MILLAN SALAZAR.jpeg",
+    },
+    {
+      name: "Herrera Quispe Jose Alfredo",
+      role: "Investigador principal",
+      faculty: "Facultad: Ingeniería de Sistemas e Informática",
+      imageUrl: "/images/integrantes/Jose Herrera.jpeg",
+    },
+    {
+      name: "Quispe Huallpa Jhampier Edison",
+      role: "Tesista",
+      faculty: "Facultad: Ingeniería de Sistemas e Informática",
+      imageUrl: "/images/integrantes/Jhampier Quispe.jpeg",
     },
   ];
 
