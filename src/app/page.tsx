@@ -106,8 +106,13 @@ export default function Home() {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data: Specimen[] = await response.json();
-        setAllSpecimens(data);
-        setFilteredSpecimens(data);
+        // Mapear imágenes locales por índice: 1a.jpg, 2a.jpg, ..., 10a.jpg
+        const mapped = data.map((s, i) => ({
+          ...s,
+          url_imagen: `/images/specimens/${i + 1}a.jpg`,
+        }));
+        setAllSpecimens(mapped);
+        setFilteredSpecimens(mapped);
       } catch (e) {
         if (e instanceof Error) {
           setError(`Failed to load specimen data: ${e.message}`);
