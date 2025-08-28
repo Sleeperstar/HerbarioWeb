@@ -147,6 +147,18 @@ export default function Home() {
       <main className="pt-20 lg:pt-24">
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-botanical-gradient">
+          {/* Background Image */}
+          <div className="absolute inset-0">
+            <Image
+              src="/images/landingimg/Landing_herbario.png"
+              alt="Herbario USM - Fondo"
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover"
+            />
+          </div>
+          {/* Overlay for readability */}
           <div className="absolute inset-0 bg-gradient-to-br from-botanical-cream/50 via-transparent to-botanical-sage/20"></div>
           <div className="relative container mx-auto px-4 py-16 lg:py-24">
             <div className="text-center max-w-5xl mx-auto">
