@@ -2,7 +2,7 @@
 
 import { useState, useEffect, type ChangeEvent } from "react";
 import Image from "next/image";
-import { Leaf, Search, Info, FileText, FlaskConical, Sparkles, Database, Users } from "lucide-react";
+import { Leaf, Search, Info, FileText, FlaskConical, Sparkles, Database, Users, Award, TreePine } from "lucide-react";
 
 import Header from "@/components/Header";
 import { Input } from "@/components/ui/input";
@@ -210,44 +210,70 @@ export default function Home() {
                 Explora siglos de investigación botánica a través de nuestra plataforma digital
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="group card-botanical hover-lift p-8 text-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 lg:gap-8">
+              <div className="group card-botanical hover-lift p-6 lg:p-8 text-center">
                 <div className="relative mb-6">
                   <div className="absolute inset-0 bg-botanical-leaf/10 rounded-full blur-lg group-hover:blur-xl transition-all-smooth"></div>
-                  <Search className="w-14 h-14 text-botanical-leaf mx-auto relative z-10 group-hover:scale-110 transition-transform" />
+                  <Search className="w-12 lg:w-14 h-12 lg:h-14 text-botanical-leaf mx-auto relative z-10 group-hover:scale-110 transition-transform" />
                 </div>
-                <h3 className="font-headline text-xl font-bold text-botanical-shadow mb-3 group-hover:text-botanical-leaf transition-colors">
+                <h3 className="font-headline text-lg lg:text-xl font-bold text-botanical-shadow mb-3 group-hover:text-botanical-leaf transition-colors">
                   Explora la Colección
                 </h3>
-                <p className="text-botanical-earth/70 leading-relaxed">
+                <p className="text-sm lg:text-base text-botanical-earth/70 leading-relaxed">
                   Accede directamente a la base de datos con nuestra búsqueda
                   avanzada y filtros especializados.
                 </p>
               </div>
-              <div className="group card-botanical hover-lift p-8 text-center">
+              <div className="group card-botanical hover-lift p-6 lg:p-8 text-center">
                 <div className="relative mb-6">
                   <div className="absolute inset-0 bg-botanical-amber/10 rounded-full blur-lg group-hover:blur-xl transition-all-smooth"></div>
-                  <FileText className="w-14 h-14 text-botanical-amber mx-auto relative z-10 group-hover:scale-110 transition-transform" />
+                  <FileText className="w-12 lg:w-14 h-12 lg:h-14 text-botanical-amber mx-auto relative z-10 group-hover:scale-110 transition-transform" />
                 </div>
-                <h3 className="font-headline text-xl font-bold text-botanical-shadow mb-3 group-hover:text-botanical-amber transition-colors">
+                <h3 className="font-headline text-lg lg:text-xl font-bold text-botanical-shadow mb-3 group-hover:text-botanical-amber transition-colors">
                   Colecciones Históricas
                 </h3>
-                <p className="text-botanical-earth/70 leading-relaxed">
+                <p className="text-sm lg:text-base text-botanical-earth/70 leading-relaxed">
                   Descubre el legado de colectores como Antonio Raimondi y Augusto
                   Weberbauer.
                 </p>
               </div>
-              <div className="group card-botanical hover-lift p-8 text-center">
+              <div className="group card-botanical hover-lift p-6 lg:p-8 text-center">
                 <div className="relative mb-6">
                   <div className="absolute inset-0 bg-botanical-moss/10 rounded-full blur-lg group-hover:blur-xl transition-all-smooth"></div>
-                  <FlaskConical className="w-14 h-14 text-botanical-moss mx-auto relative z-10 group-hover:scale-110 transition-transform" />
+                  <FlaskConical className="w-12 lg:w-14 h-12 lg:h-14 text-botanical-moss mx-auto relative z-10 group-hover:scale-110 transition-transform" />
                 </div>
-                <h3 className="font-headline text-xl font-bold text-botanical-shadow mb-3 group-hover:text-botanical-moss transition-colors">
+                <h3 className="font-headline text-lg lg:text-xl font-bold text-botanical-shadow mb-3 group-hover:text-botanical-moss transition-colors">
                   Códigos de Barras de ADN
                 </h3>
-                <p className="text-botanical-earth/70 leading-relaxed">
+                <p className="text-sm lg:text-base text-botanical-earth/70 leading-relaxed">
                   Explora nuestro innovador trabajo en la identificación molecular
                   de especies.
+                </p>
+              </div>
+              <div className="group card-botanical hover-lift p-6 lg:p-8 text-center">
+                <div className="relative mb-6">
+                  <div className="absolute inset-0 bg-red-500/10 rounded-full blur-lg group-hover:blur-xl transition-all-smooth"></div>
+                  <Award className="w-12 lg:w-14 h-12 lg:h-14 text-red-500 mx-auto relative z-10 group-hover:scale-110 transition-transform" />
+                </div>
+                <h3 className="font-headline text-lg lg:text-xl font-bold text-botanical-shadow mb-3 group-hover:text-red-500 transition-colors">
+                  Colección Tipo
+                </h3>
+                <p className="text-sm lg:text-base text-botanical-earth/70 leading-relaxed">
+                  Explora los especímenes tipo que sirven como referencia
+                  para la nomenclatura científica.
+                </p>
+              </div>
+              <div className="group card-botanical hover-lift p-6 lg:p-8 text-center">
+                <div className="relative mb-6">
+                  <div className="absolute inset-0 bg-green-600/10 rounded-full blur-lg group-hover:blur-xl transition-all-smooth"></div>
+                  <TreePine className="w-12 lg:w-14 h-12 lg:h-14 text-green-600 mx-auto relative z-10 group-hover:scale-110 transition-transform" />
+                </div>
+                <h3 className="font-headline text-lg lg:text-xl font-bold text-botanical-shadow mb-3 group-hover:text-green-600 transition-colors">
+                  Colección Etnobotánica y botánica económica
+                </h3>
+                <p className="text-sm lg:text-base text-botanical-earth/70 leading-relaxed">
+                  Descubre el uso tradicional y económico de las plantas
+                  en las comunidades peruanas.
                 </p>
               </div>
             </div>
