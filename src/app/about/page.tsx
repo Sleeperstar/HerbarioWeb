@@ -142,13 +142,33 @@ function TeamGrid() {
     },
   ];
 
+  // Separar investigadores y tesistas
+  const investigadores = team.filter((m) => m.role.toLowerCase().includes("investigador"));
+  const tesistas = team.filter((m) => m.role.toLowerCase() === "tesista");
+
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {team.map((member) => (
-        <div key={member.name}>
-          <TeamMemberCard member={member} />
+    <div className="space-y-8">
+      <div>
+        <h3 className="text-2xl font-semibold text-botanical-shadow mb-4">Investigadores</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {investigadores.map((member) => (
+            <div key={member.name}>
+              <TeamMemberCard member={member} />
+            </div>
+          ))}
         </div>
-      ))}
+      </div>
+
+      <div>
+        <h3 className="text-2xl font-semibold text-botanical-shadow mb-4">Tesistas</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {tesistas.map((member) => (
+            <div key={member.name}>
+              <TeamMemberCard member={member} />
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

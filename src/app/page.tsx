@@ -168,7 +168,7 @@ export default function Home() {
                   <span className="text-botanical-leaf">mas de 800 mil especímenes</span>
                 </h1>
                 <p className="text-lg lg:text-xl text-white/90 mb-8 mx-auto leading-relaxed">
-                  <span className="font-semibold text-botanical-leaf"></span>, Se embarca en
+                  <span className="font-semibold text-botanical-leaf"></span>Se embarca en
                   un proyecto de digitalización para hacer accesible su invaluable
                   colección a investigadores, educadores y al público en general.
                 </p>
