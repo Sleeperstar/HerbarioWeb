@@ -135,6 +135,24 @@ function TeamGrid() {
       imageUrl: "/images/integrantes/Jose Herrera.jpeg",
     },
     {
+      name: "GABRIEL CAMPOS EDWIN NATIVIDAD",
+      role: "Investigador principal",
+      faculty: "Facultad: Ciencias Sociales",
+      imageUrl: "/images/integrantes/GABRIEL CAMPOS.jpeg",
+    },
+    {
+      name: "LEON BOCANGEL DE YOUNG BLANCA ROSA",
+      role: "Investigadora principal",
+      faculty: "Facultad: Ciencias Biológicas",
+      imageUrl: "/images/integrantes/Blanca Leon.jpeg",
+    },
+    {
+      name: "CANO ECHEVARRIA ASUNCION ALIPIO",
+      role: "Investigador principal",
+      faculty: "Facultad: Ciencias Biológicas",
+      imageUrl: "/images/integrantes/Cano Echevarria.jpeg",
+    },
+    {
       name: "Quispe Huallpa Jhampier Edison",
       role: "Tesista",
       faculty: "Facultad: Ingeniería de Sistemas e Informática",
