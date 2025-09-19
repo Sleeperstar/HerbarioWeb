@@ -49,7 +49,7 @@ export default function Header() {
                 Herbario USM
               </h1>
               <p className="text-xs lg:text-sm text-white/80 font-medium">
-                Explorer Digital
+                Universidad Nacional Mayor de San Marcos
               </p>
             </div>
           </Link>

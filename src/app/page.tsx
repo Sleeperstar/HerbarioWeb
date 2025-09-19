@@ -164,12 +164,11 @@ export default function Home() {
             <div className="text-center max-w-5xl mx-auto">
               <div className="mx-auto max-w-4xl bg-black/35 backdrop-blur-sm md:backdrop-blur-md rounded-2xl border border-white/10 shadow-lg p-6 md:p-8 md:-translate-y-2 lg:-translate-y-3">
                 <h1 className="font-headline text-4xl md:text-6xl lg:text-7xl font-bold text-botanical-shadow mb-6 text-shadow leading-tight text-white">
-                  El herbario más grande del Perú,{" "}
-                  <span className="text-botanical-leaf">ahora abierto al mundo</span>
+                  Del Perú hacia el mundo,{" "}
+                  <span className="text-botanical-leaf">mas de 800 mil especímenes</span>
                 </h1>
                 <p className="text-lg lg:text-xl text-white/90 mb-8 mx-auto leading-relaxed">
-                  El Herbario USM, con sus más de{" "}
-                  <span className="font-semibold text-botanical-leaf">750,000 especímenes</span>, se embarca en
+                  <span className="font-semibold text-botanical-leaf"></span>, Se embarca en
                   un proyecto de digitalización para hacer accesible su invaluable
                   colección a investigadores, educadores y al público en general.
                 </p>
